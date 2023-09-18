@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { Stack, Typography } from "@mui/material"
+import { Stack } from "@mui/material"
 
 export const TodosManagmentWrapper = styled(Stack)`
   border-top: 1px solid #EDEDED; 
