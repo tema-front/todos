@@ -1,31 +1,29 @@
+import { TodosContext } from "contexts/todos/TodosContext";
+import { ITodosContextValue } from "contexts/todos/TodosContext.types";
 import { FC, useState } from "react";
-import { PageWrapper, TodosWrapper, TodosContent } from "./Todos.styles";
+import { ITodo, TTodoTabs } from "types/Todo";
+import { PageWrapper, TodosContent, TodosWrapper } from "./Todos.styles";
 import { Stack, Typography } from "@mui/material";
-import { TodosList } from "../../components/TodosList";
-import { TodosContext } from "../../contexts/todos/TodosContext";
-import { TodosManagment } from "../../components/TodosManagment";
-import { Todo, TodoTabs } from "../../types/Todo";
-import { TodosContextValue } from "../../contexts/todos/TodosContext.types";
-import { TodosForm } from "../../components/TodosForm";
+import { TodosForm } from "components/TodosForm";
+import { TodosList } from "components/TodosList";
+import { TodosManagment } from "components/TodosManagment";
 
 export const Todos: FC = () => {
-  const [todos, setTodos] = useState<Todo[]>([])
-  const TodosContextValue: TodosContextValue = {
+  const [todos, setTodos] = useState<ITodo[]>([]);
+  const TodosContextValue: ITodosContextValue = {
     todos,
-    setTodos
-  }
-  const [currentTab, setCurrentTab] = useState<TodoTabs>('all')
-
-  // написать тесты
-  // удалить лишнии файлы
+    setTodos,
+  };
+  const [currentTab, setCurrentTab] = useState<TTodoTabs>("all");
 
   return (
     <TodosContext.Provider value={TodosContextValue}>
       <PageWrapper>
-        <Stack alignItems={'center'} width={'100%'}>
-          <Typography fontSize={78} color={'#E9D9D8'}>
+        <Stack alignItems={"center"} width={"100%"}>
+          <Typography fontSize={78} color={"#E9D9D8"}>
             todos
           </Typography>
+
           <TodosContent>
             <TodosWrapper>
               <TodosForm />
@@ -38,5 +36,5 @@ export const Todos: FC = () => {
         </Stack>
       </PageWrapper>
     </TodosContext.Provider>
-  )
-}
+  );
+};

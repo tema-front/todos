@@ -1,4 +1,4 @@
 import { createContext } from "react";
-import { TodosContextValue } from "./TodosContext.types"
+import { ITodosContextValue } from "./TodosContext.types";
 
-export const TodosContext = createContext<TodosContextValue | null>(null);
+export const TodosContext = createContext<ITodosContextValue | null>(null);

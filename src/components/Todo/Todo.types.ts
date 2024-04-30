@@ -1,5 +1,5 @@
-import { Todo } from "../../types/Todo";
+import { ITodo } from "../../types/Todo";
 
-export interface TodoProps {
-  todo: Todo
+export interface ITodoProps {
+  todo: ITodo;
 }

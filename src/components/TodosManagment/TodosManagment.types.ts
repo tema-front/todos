@@ -1,21 +1,21 @@
-import { TodoTabs } from "../../types/Todo"
+import { TTodoTabs } from "../../types/Todo";
 
-export interface TodosManagmentProps {
-  tabsData: TabsData
+export interface ITodosManagmentProps {
+  tabsData: ITabsData;
 }
 
-export interface TabsData {
-  currentTab: TodoTabs
-  setCurrentTab: (value: TodoTabs) => void
+export interface ITabsData {
+  currentTab: TTodoTabs;
+  setCurrentTab: (value: TTodoTabs) => void;
 }
 
-export const todosTabs: TodoTab[] = [
-  { id: 'all', label: 'All' },
-  { id: 'active', label: 'Active' },
-  { id: 'completed', label: 'Completed' },
-]
+export const todosTabs: ITodoTab[] = [
+  { id: "all", label: "All" },
+  { id: "active", label: "Active" },
+  { id: "completed", label: "Completed" },
+];
 
-export interface TodoTab {
-  id: TodoTabs
-  label: string
+export interface ITodoTab {
+  id: TTodoTabs;
+  label: string;
 }

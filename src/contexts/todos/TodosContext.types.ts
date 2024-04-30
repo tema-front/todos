@@ -1,6 +1,6 @@
-import { Todo, TodoTabs } from "../../types/Todo";
+import { ITodo } from "../../types/Todo";
 
-export interface TodosContextValue {
-  todos: Todo[],
-  setTodos: any,
+export interface ITodosContextValue {
+  todos: ITodo[];
+  setTodos: (data: ITodo[] | ((prev: ITodo[]) => ITodo[])) => void;
 }
